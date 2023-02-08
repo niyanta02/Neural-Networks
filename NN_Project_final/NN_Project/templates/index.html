@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- bootstrap's meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/favicon.ico">
+
+    <title>Student Success Prediction</title>
+
+    <!-- bootstrap css links and script -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Custom styles for this bootstrap template -->
+    <link href="../static/css/cover.css" rel="stylesheet">
+    <link href="chrome-extension://idpbkophnbfijcnlffdmmppgnncgappc/css/content.css" rel="stylesheet" type="text/css">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Custom stylesheet  -->
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+</head>
+
+
+<body class="text-center">
+    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <!-- <h3 class="masthead-brand header-font">Student Success Predictor</h3> -->
+                
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <h1 class="text-light header-font">Student Success </h1>
+            <h4 class=" text-light mb-3">Choose features to make a prediction:</h4>
+            <div class="row"></div>
+            <form class="mt-3" action="/predict" method="POST">
+
+                <div class="form-group ml-4">
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">PROGRAM SEMESTERS</label>
+                        <div class="col-sm-6">
+                            <select name="PROGRAM_SEMESTERS" id="PROGRAM_SEMESTERS" class="filtered form-control form-control-sm">
+                                
+                                <option value="1" class="filtered"> 1 </option>
+                                <option value="2" class="filtered"> 2 </option>
+                                <option value="3" class="filtered"> 3 </option>
+                                <option value="4" class="filtered"> 4 </option>
+                                <option value="5" class="filtered"> 5 </option>
+                                <option value="6" class="filtered"> 6 </option>                         
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">TOTAL PROGRAM SEMESTERS</label>
+                        <div class="col-sm-6">
+                            <select name="TOTAL_PROGRAM_SEMESTERS" id="TOTAL_PROGRAM_SEMESTERS" class="filtered form-control form-control-sm">
+                               <option value="1" class="filtered"> 1 </option>
+                                <option value="2" class="filtered"> 2 </option>
+                                <option value="3" class="filtered"> 3 </option>
+                                <option value="4" class="filtered"> 4 </option>
+                                <option value="5" class="filtered"> 5 </option>
+                                <option value="6" class="filtered"> 6 </option> 
+                                <option value="7" class="filtered"> 7 </option>
+                                <option value="8" class="filtered"> 8 </option>
+                                <option value="9" class="filtered"> 9 </option>                 
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">'FIRST YEAR PERSISTENCE COUNT'</label>
+                        <div class="col-sm-6">
+                            <select name="FIRST_YEAR_PERSISTENCE_COUNT" id="FIRST_YEAR_PERSISTENCE_COUNT" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">ENGLISH TEST SCORE</label>
+                        <div class="col-sm-6">
+                            <select name="ENGLISH_TEST_SCORE" id="ENGLISH_TEST_SCORE" class="filtered form-control form-control-sm">
+                                <option value="110" class="filtered"> 110 </option>
+                                <option value="120" class="filtered"> 120 </option>
+                                <option value="130" class="filtered"> 130 </option>
+                                <option value="140" class="filtered"> 140 </option>
+                                <option value="150" class="filtered"> 150 </option>
+                                <option value="160" class="filtered"> 160 </option> 
+                                <option value="170" class="filtered"> 170 </option>
+                                <option value="180" class="filtered"> 180 </option>
+                                <option value="190" class="filtered"> 190 </option>                          
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term1</label>
+                        <div class="col-sm-6">
+                            <select name="Term1" id="Term1" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term2</label>
+                        <div class="col-sm-6">
+                            <select name="Term2" id="Term2" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term3</label>
+                        <div class="col-sm-6">
+                            <select name="Term3" id="Term3" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term4</label>
+                        <div class="col-sm-6">
+                            <select name="Term4" id="Term4" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term5</label>
+                        <div class="col-sm-6">
+                            <select name="Term5" id="Term5" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term6</label>
+                        <div class="col-sm-6">
+                            <select name="Term6" id="Term6" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term7</label>
+                        <div class="col-sm-6">
+                            <select name="Term7" id="Term7" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term8</label>
+                        <div class="col-sm-6">
+                            <select name="Term8" id="Term8" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term9</label>
+                        <div class="col-sm-6">
+                            <select name="Term9" id="Term9" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 control-label positions pt-1">Term10</label>
+                        <div class="col-sm-6">
+                            <select name="Term10" id="Term10" class="filtered form-control form-control-sm">
+                                <option value="0" class="filtered"> 0 </option>
+                                <option value="1" class="filtered"> 1 </option>                            
+                            </select>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">INTAKE_COLLEGE_EXPERIENCE</label>
+                        <div class="col-sm-6">
+                            <select name="INTAKE_COLLEGE_EXPERIENCE" id="INTAKE_COLLEGE_EXPERIENCE" class="filtered form-control form-control-sm">
+                                <option value="Prep Program Enrolled" class="filtered"> Prep Program Enrolled </option>
+                                <option value="Graduate" class="filtered"> Graduate </option>
+                                <option value="Enrolled" class="filtered"> Enrolled </option>
+                                <option value="New to College" class="filtered"> New to College </option>
+                                <option value="CE Enrolled" class="filtered"> CE Enrolled </option>
+                                <option value="Prep Program Graduate" class="filtered"> Prep Program Graduate </option>                          
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">SCHOOL_CODE</label>
+                        <div class="col-sm-6">
+                            <select name="SCHOOL_CODE" id="SCHOOL_CODE" class="filtered form-control form-control-sm">
+                                <option value="CA" class="filtered"> CA </option>
+                                <option value="CH" class="filtered"> CH </option>
+                                <option value="BU" class="filtered"> BU </option>
+                                <option value="AS" class="filtered"> AS </option>
+                                <option value="ST" class="filtered"> ST </option>
+                                <option value="HT" class="filtered"> HT </option> 
+                                <option value="TR" class="filtered">TR </option>                          
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">STUDENT_LEVEL_NAME</label>
+                        <div class="col-sm-6">
+                            <select name="STUDENT_LEVEL_NAME" id="STUDENT_LEVEL_NAME" class="filtered form-control form-control-sm">
+                                <option value="Post Secondary" class="filtered"> Post Secondary </option>
+                                <option value="Post Diploma" class="filtered"> Post Diploma </option>                         
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">TIME_STATUS_NAME</label>
+                        <div class="col-sm-6">
+                            <select name="TIME_STATUS_NAME" id="TIME_STATUS_NAME" class="filtered form-control form-control-sm">
+                                <option value="Full-Time" class="filtered"> Full-Time </option>
+                                <option value="Part-Time" class="filtered"> Part-Time </option>                         
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">RESIDENCY_STATUS_NAME</label>
+                        <div class="col-sm-6">
+                            <select name="RESIDENCY_STATUS_NAME" id="RESIDENCY_STATUS_NAME" class="filtered form-control form-control-sm">
+                                <option value="Resident" class="filtered"> Resident </option>
+                                <option value="Non-Resident" class="filtered"> Non-Resident </option>                         
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">FUNDING_SOURCE_NAME</label>
+                        <div class="col-sm-6">
+                            <select name="FUNDING_SOURCE_NAME" id="FUNDING_SOURCE_NAME" class="filtered form-control form-control-sm">
+                                <option value="GPOG - FT" class="filtered"> GPOG - FT </option>
+                                <option value="GPOG - PT" class="filtered"> GPOG - PT </option>
+                                <option value="Intl - Regular" class="filtered"> Intl - Regular </option>
+                                <option value="Second Career Program" class="filtered"> Second Career Program </option>
+                                <option value="Apprentice - PS" class="filtered"> Apprentice - PS </option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">GENDER</label>
+                        <div class="col-sm-6">
+                            <select name="GENDER" id="GENDER" class="filtered form-control form-control-sm">
+                                <option value="M" class="filtered"> M </option>
+                                <option value="F" class="filtered"> F</option>   
+                                <option value="N" class="filtered"> N</option>                         
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">DISABILITY_IND</label>
+                        <div class="col-sm-6">
+                            <select name="DISABILITY_IND" id="DISABILITY_IND" class="filtered form-control form-control-sm">
+                                <option value="Y" class="filtered"> Y </option>
+                                <option value="N" class="filtered"> N </option>                         
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">MAILING_COUNTRY_NAME</label>
+                        <div class="col-sm-6">
+                            <select name="MAILING_COUNTRY_NAME" id="MAILING_COUNTRY_NAME" class="filtered form-control form-control-sm">
+                                <option value="Canada" class="filtered"> Canada </option>
+                                                         
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">CURRENT_STAY_STATUS</label>
+                        <div class="col-sm-6">
+                            <select name="CURRENT_STAY_STATUS" id="CURRENT_STAY_STATUS" class="filtered form-control form-control-sm">
+                                <option value="Left College" class="filtered"> Left College </option>
+                                <option value="Completed" class="filtered"> Completed </option>                
+                                <option value="Graduated" class="filtered"> Graduated </option>                         
+
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">ACADEMIC_PERFORMANCE</label>
+                        <div class="col-sm-6">
+                            <select name="ACADEMIC_PERFORMANCE" id="ACADEMIC_PERFORMANCE" class="filtered form-control form-control-sm">
+                                <option value="AB - Good" class="filtered"> AB - Good </option>
+                                <option value="DF - Poor" class="filtered"> DF - Poor </option>                
+                                <option value="C - Satisfactory" class="filtered"> C - Satisfactory </option>  
+                                <option value="ZZ - Unknown" class="filtered"> ZZ - Unknown </option>                         
+
+                                         
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">AGE_GROUP_LONG_NAME</label>
+                        <div class="col-sm-6">
+                            <select name="AGE_GROUP_LONG_NAME" id="AGE_GROUP_LONG_NAME" class="filtered form-control form-control-sm">
+                                <option value="0 to 18" class="filtered"> 0 to 18 </option>
+                                <option value="19 to 20" class="filtered"> 19 to 20 </option>                
+                                <option value="21 to 25" class="filtered"> 21 to 25 </option>  
+                                <option value="26 to 30" class="filtered"> 26 to 30 </option>                         
+                                <option value="31 to 35" class="filtered"> 31 to 35 </option>         
+                                <option value="36 to 40" class="filtered"> 36 to 40 </option>                         
+                                <option value="41 to 50" class="filtered"> 41 to 50 </option>                         
+                                         
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">APPLICANT_CATEGORY_NAME</label>
+                        <div class="col-sm-6">
+                            <select name="APPLICANT_CATEGORY_NAME" id="APPLICANT_CATEGORY_NAME" class="filtered form-control form-control-sm">
+                                <option value="High School, Domestic" class="filtered"> High School, Domestic </option>
+                                <option value="Mature: Domestic  With Post Secondary" class="filtered"> Mature: Domestic  With Post Secondary </option>                
+                                <option value="Mature: Domestic 19 or older No Academic History" class="filtered"> Mature: Domestic 19 or older No Academic History </option>  
+                                <option value="International Student, with Post Secondary" class="filtered"> International Student, with Post Secondary </option>  
+                                <option value="BScN, High School Domestic" class="filtered"> BScN, High School Domestic </option>    
+                                                      
+                                         
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">APPLICANT_TARGET_SEGMENT_NAME</label>
+                        <div class="col-sm-6">
+                            <select name="APPLICANT_TARGET_SEGMENT_NAME" id="APPLICANT_TARGET_SEGMENT_NAME" class="filtered form-control form-control-sm">
+                                <option value="Non-Direct Entry" class="filtered"> Non-Direct Entry </option>
+                                <option value="Direct Entry" class="filtered"> Direct Entry </option>                
+                                <option value="International" class="filtered"> International </option>                
+                                <option value="Unknown" class="filtered"> Unknown </option>                             
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-sm-3 ontrol-label positions pt-1">PREV_EDU_CRED_LEVEL_NAME</label>
+                        <div class="col-sm-6">
+                            <select name="PREV_EDU_CRED_LEVEL_NAME" id="PREV_EDU_CRED_LEVEL_NAME" class="filtered form-control form-control-sm">
+                                <option value="High School" class="filtered"> High School </option>
+                                <option value="Post Secondary" class="filtered"> Post Secondary </option>                
+                                <option value="Unclassified" class="filtered"> Unclassified </option>                             
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn bg-mars-red my-2">Predict</button>
+            </form>
+        </main>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>A NEURAL NETWORK Project </p>
+            </div>
+        </footer>
+        </div>
+
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>
